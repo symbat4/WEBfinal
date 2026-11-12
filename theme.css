@@ -1,0 +1,254 @@
+:root {
+    color-scheme: light;
+    --ramen-bg: #ffeae0;
+    --ramen-surface: #fffaf7;
+    --ramen-card: #ffffff;
+    --ramen-text: #29201e;
+    --ramen-muted: #554943;
+    --ramen-border: #e6c9bd;
+    --ramen-nav: #fff0e5;
+    --ramen-input: #ffffff;
+    --ramen-accent: #c43d16;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --ramen-bg: #171b24;
+    --ramen-surface: #222936;
+    --ramen-card: #2a3240;
+    --ramen-text: #f7f3ee;
+    --ramen-muted: #d5dce6;
+    --ramen-border: #586578;
+    --ramen-nav: #202734;
+    --ramen-input: #303a4b;
+    --ramen-accent: #ff946d;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background: var(--ramen-bg) !important;
+    color: var(--ramen-text);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navbar,
+.navbar.bg-white,
+.navbar.bg-warning-subtle {
+    background: var(--ramen-nav) !important;
+    background-image: none !important;
+    border-bottom: 1px solid var(--ramen-border) !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .logo a,
+.navbar .logo h1,
+.navbar ul li a {
+    color: var(--ramen-text) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--ramen-accent) !important;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--ramen-border);
+    border-radius: 30px;
+    background: var(--ramen-card);
+    color: var(--ramen-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    background: var(--ramen-surface);
+}
+
+.theme-toggle:focus-visible {
+    outline: 3px solid var(--ramen-accent);
+    outline-offset: 3px;
+}
+
+html[data-theme="dark"] .navbar-toggler {
+    background: #e6edf5;
+    border-color: var(--ramen-border);
+}
+
+html[data-theme="dark"] :is(body, main, section, article) {
+    color: var(--ramen-text);
+}
+
+html[data-theme="dark"] :is(.text-dark, .text-body, .text-secondary,
+    .text-muted, .lead, .form-text) {
+    color: var(--ramen-muted) !important;
+}
+
+html[data-theme="dark"] :is(.card, .card-body, .card-footer,
+    .creative-card, .recipe-card, .menu-card,
+    .ramen-card, .food-card, .product-card,
+    .info-card, .recipe-box, .ingredient-card,
+    .signup-box, .build-form, .build-sidebar,
+    .build-promo, .ramen-about, .choose-ramen,
+    #ramen-guide, .ramen-collection,
+    .story, .value-box, .special-story,
+    .gallery-caption, .side-item, .counter-box, .game-arena,
+    .grid-header, .grid-sidebar, .grid-main,
+    .grid-footer, .medasym-faq-item,
+    .medasym-faq-question, .medasym-faq-answer,
+    .medasym-popup-content, .category .card,
+    .accordion-item, .accordion-button,
+    .modal-content, .dropdown-menu,
+    .list-group-item, .toast, .table-responsive,
+    .table-wrapper, #order-toast,
+    #searchSuggestions, .bg-white, .bg-light,
+    .bg-warning-subtle, .bg-body,
+    .bg-body-secondary, .bg-body-tertiary) {
+    background: var(--ramen-card) !important;
+    color: var(--ramen-text) !important;
+    border-color: var(--ramen-border) !important;
+}
+
+html[data-theme="dark"] :is(.card, .signup-box, .build-form,
+    .build-sidebar, #ramen-guide, .ramen-about, .recipe-card, .grid-header,
+    .grid-sidebar, .grid-main, .grid-footer,
+    .story, .value-box, .category .card,
+    .medasym-popup-content) :is(h1, h2, h3, h4, h5, h6,
+    p, li, label, small, strong, span) {
+    color: var(--ramen-text) !important;
+}
+
+html[data-theme="dark"] :is(.card-title, .card-text, .accordion-body,
+    .modal-body, .dropdown-item) {
+    color: var(--ramen-text) !important;
+}
+
+html[data-theme="dark"] :is(table, .table) {
+    --bs-table-bg: var(--ramen-card);
+    --bs-table-color: var(--ramen-text);
+    --bs-table-border-color: var(--ramen-border);
+    --bs-table-striped-bg: #344051;
+    --bs-table-striped-color: #ffffff;
+    --bs-table-hover-bg: #3a485a;
+    --bs-table-hover-color: #ffffff;
+    background: var(--ramen-card) !important;
+    color: var(--ramen-text) !important;
+}
+
+html[data-theme="dark"] table :is(thead, tbody, tr, th, td) {
+    background-color: var(--ramen-card) !important;
+    color: var(--ramen-text) !important;
+    border-color: var(--ramen-border) !important;
+}
+
+html[data-theme="dark"] .table> :not(caption)>*>* {
+    --bs-table-bg: var(--ramen-card);
+    --bs-table-color: var(--ramen-text);
+    background-color: var(--ramen-card) !important;
+    color: var(--ramen-text) !important;
+    border-color: var(--ramen-border) !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] :is(input, textarea, select,
+    .form-control, .form-select) {
+    background: var(--ramen-input) !important;
+    color: var(--ramen-text) !important;
+    border-color: var(--ramen-border) !important;
+}
+
+html[data-theme="dark"] :is(input, textarea)::placeholder {
+    color: #c4cedc !important;
+    opacity: 1;
+}
+
+html[data-theme="dark"] :is(a:not(.btn):not(.nav-link), .link-primary) {
+    color: var(--ramen-accent);
+}
+
+html[data-theme="dark"] :is(.btn-outline-dark, .btn-outline-secondary) {
+    color: var(--ramen-text);
+    border-color: var(--ramen-border);
+}
+
+html[data-theme="dark"] :is(.btn-outline-dark, .btn-outline-secondary):hover {
+    background: #45546a;
+    color: #ffffff;
+}
+
+html[data-theme="dark"] :is(hr, .border, .border-top, .border-bottom) {
+    border-color: var(--ramen-border) !important;
+}
+
+html[data-theme="dark"] #searchSuggestions li:hover {
+    background: var(--ramen-surface) !important;
+}
+
+@media (max-width: 991.98px) {
+    .theme-toggle {
+        margin: 0.7rem 0;
+    }
+
+    .navbar-collapse {
+        padding-bottom: 0.65rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .theme-toggle,
+    body {
+        transition: none;
+    }
+}
+/* ===== Dark mode for the TheMealDB API section (recipes page) ===== */
+html[data-theme="dark"] .api-card,
+html[data-theme="dark"] .api-chip,
+html[data-theme="dark"] .api-form input {
+    background: var(--ramen-card);
+    color: var(--ramen-text);
+    border-color: var(--ramen-border);
+}
+
+html[data-theme="dark"] :is(.api-section h2, .api-intro, .api-card h3, .api-meta, .api-ingredients li, .api-status p) {
+    color: var(--ramen-text) !important;
+}
+
+html[data-theme="dark"] .api-link {
+    color: var(--ramen-accent);
+}
+
+html[data-theme="dark"] .api-status-error p {
+    color: #ff8a8a !important;
+}
+
+/* Inline validation: accessible and legible in both themes */
+.contact-field-error { display: block; margin: .25rem 0 .65rem; color: #b42332; font-size: .875rem; }
+.contact-field-error[hidden], #spiceError[hidden], #buildNameError[hidden], #buildEmailError[hidden] { display: none !important; }
+html[data-theme="dark"] .contact-field-error, html[data-theme="dark"] #spiceError, html[data-theme="dark"] #buildNameError, html[data-theme="dark"] #buildEmailError { color: #ff9ea7 !important; }
+#contact-form .is-invalid { border: 2px solid #dc3545; }
+
+/* Dark mode: "MEDASYM in Numbers" section */
+html[data-theme="dark"] .counter-section {
+    background: transparent !important;
+}
+html[data-theme="dark"] .counter-section h2 {
+    color: var(--ramen-text) !important;
+}
+html[data-theme="dark"] .counter-subtitle {
+    color: var(--ramen-muted) !important;
+}
+html[data-theme="dark"] .counter-box p {
+    color: var(--ramen-muted) !important;
+}
